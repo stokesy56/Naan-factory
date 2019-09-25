@@ -1,18 +1,26 @@
 #Functions
-def make_dough(arg1,arg2):
-    if arg1 == 'wheat' and arg2 =='water':
+def make_dough(ingredient1, ingredient2):
+    if (ingredient1 == 'wheat' and ingredient2 == 'water') or (ingredient1 == 'water' and ingredient2 == 'wheat'):
         return 'dough'
     else:
         return 'not dough'
 
-def wood_oven(arg1):
-    if arg1 == 'dough':
+def wood_oven(ingredient1):
+    if ingredient1 == 'dough':
         return 'Naan bread'
     else:
         return 'not bread'
 
-#Calling of Functions
+def run_naan_factory(ingredient1, ingredient2):
+    dough_r = make_dough(ingredient1, ingredient2)
+    result_bread = wood_oven(dough_r)
+    return result_bread
 
+#Calling of Functions
+print(make_dough('fire','stones'))
+print('////////')
+print(run_naan_factory('sand', 'water'))
+print('////////')
 #Tests TDD
 #As a user i can add 'wheat' and 'water' to the function make_dough, so that I can make 'dough'.
                         #evaluates --> True or False (Boolean)
